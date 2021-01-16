@@ -14,8 +14,8 @@ sudo chmod +x /usr/local/bin/flash
 ## Download and extract the image
 
 ```bash
-curl -L "http://cdimage.ubuntu.com/releases/focal/release/ubuntu-20.04-preinstalled-server-arm64+raspi.img.xz" -o ~/Downloads/ubuntu-20.04-preinstalled-server-arm64+raspi.img.xz
-unxz -T 0 ~/Downloads/ubuntu-20.04-preinstalled-server-arm64+raspi.img.xz
+curl -L "http://cdimage.ubuntu.com/releases/focal/release/ubuntu-20.04.1-preinstalled-server-arm64+raspi.img.xz" -o ~/Downloads/ubuntu-20.04.1-preinstalled-server-arm64+raspi.img.xz
+unxz -T 0 ~/Downloads/ubuntu-20.04.1-preinstalled-server-arm64+raspi.img.xz
 ```
 
 ## Flash
@@ -29,3 +29,6 @@ flash \
 ## Boot
 
 Place the SD Card in your RPi and give the system approx ~10 minutes to boot before trying to SSH.
+
+
+flash --hostname m1 --ssid nest_5 --password N35t123! ~/Downloads/ubuntu-20.04.1-preinstalled-server-arm64+raspi.img
