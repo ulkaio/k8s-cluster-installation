@@ -10,7 +10,7 @@ locale: 'en_AU.UTF-8'
 
 ## Set the timezone
 ## Value of 'timezone' must exist in /usr/share/zoneinfo
-timezone: 'Australia/Melbourne'
+timezone: 'America/Los_Angeles'
 #timezone: 'America/New_York'
 
 apt_preserve_sources_list: true
@@ -32,7 +32,7 @@ users:
     lock_passwd: true
     ssh_pwauth: false
     ssh_authorized_keys:
-      - 'ssh-rsa '
+      - 'ssh_rsa'
 
 write_files:
   - path: /etc/netplan/50-cloud-init.yaml
@@ -43,8 +43,8 @@ write_files:
         ethernets:
           eth0:
             addresses:
-              - 192.168.1.121/24
-            gateway4: 192.168.1.1
+              - 192.168.29.121/24
+            gateway4: 192.168.29.1
             nameservers:
               addresses:
                 - 1.1.1.1
@@ -53,13 +53,13 @@ write_files:
     ## Note: IP allocation is dynamic and won't match the defined state as in eth0.
     ##       This will require manually configuring the Ansible inventory file with
     ##       the assigned IP values.
-    #     wifis:
-    #       wlan0:
-    #         optional: true
-    #         dhcp4: true
-    #         access-points:
-    #           'YOUR-SSID-NAME':
-    #             password: 'YOUR-NETWORK-PASSWORD'
+         wifis:
+           wlan0:
+             optional: true
+             dhcp4: true
+             access-points:
+               'Nest_5':
+                 password: 'N35t123!'
 
 runcmd:
   - [sudo, netplan, apply]
