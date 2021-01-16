@@ -1,7 +1,7 @@
 #cloud-config
 
 ## Set your hostname here, the manage_etc_hosts will update the hosts file entries as well
-hostname: k8s-master-02
+hostname: k8s-master-01
 manage_etc_hosts: true
 
 ## Set the locale of the system
@@ -26,13 +26,13 @@ users:
     ssh_import_id: None
     ## To enable SSH password log in
     ## mkpasswd --method=SHA-512 --rounds=4096
-    # passwd: ""
+    passwd: "raspberry"
     # lock_passwd: false
     # ssh_pwauth: true
     lock_passwd: true
-    ssh_pwauth: false
+    ssh_pwauth: true
     ssh_authorized_keys:
-      - 'ssh_rsa'
+      - './ssh_rsa.pub'
 
 write_files:
   - path: /etc/netplan/50-cloud-init.yaml
