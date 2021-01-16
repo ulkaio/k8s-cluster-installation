@@ -29,7 +29,7 @@ users:
     passwd: "raspberry"
     # lock_passwd: false
     # ssh_pwauth: true
-    lock_passwd: true
+    lock_passwd: false
     ssh_pwauth: true
     ssh_authorized_keys:
       - './ssh_rsa.pub'
@@ -58,7 +58,7 @@ write_files:
              optional: true
              dhcp4: true
              access-points:
-               'Nest_5':
+               'nest_5':
                  password: 'N35t123!'
 
 runcmd:
