@@ -32,7 +32,7 @@ users:
     lock_passwd: false
     ssh_pwauth: true
     ssh_authorized_keys:
-      - './ssh_rsa.pub'
+      - '/home/ulka/k8s-cluster-installation/setup/ssh_rsa.pub'
 
 write_files:
   - path: /etc/netplan/50-cloud-init.yaml
